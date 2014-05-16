@@ -15,18 +15,25 @@ public class DefaultFileComparator implements Comparator<FileDetail> {
             return 0;
         }
 
-        // compare the file type first
-        int result = Integer.compare(o1.getFileType().getSortOrder(), o2.getFileType().getSortOrder());
-
-        // if the types are the same, we use the file name for sorting
-        if (result == 0) {
-            // the file name alone may not be unique, but there should never
-            // be two files with the same name in the same assay!
-            String uniqueFileName1 = o1.getAssayAccession() + o1.getFileName();
-            String uniqueFileName2 = o2.getAssayAccession() + o2.getFileName();
-            result = uniqueFileName1.compareTo(uniqueFileName2);
+        // sort on project accession
+        int result = o1.getProjectAccession().compareTo(o2.getProjectAccession());
+        if (result != 0) { // if there is a difference, no need to check further
+            return result;
         }
 
-        return result;
+        // if the project accessions are the same, sort on assay accession
+        result = o1.getAssayAccession().compareTo(o2.getAssayAccession());
+        if (result != 0) { // if there is a difference, no need to check further
+            return result;
+        }
+
+        // if the project and assay accessions are also the same, sort on file type
+        result = Integer.compare(o1.getFileType().getSortOrder(), o2.getFileType().getSortOrder());
+        if (result != 0) { // if there is a difference, no need to check further
+            return result;
+        }
+
+        // if project, assay and type are the same, sort on the file name
+        return o1.getFileName().compareTo(o2.getFileName());
     }
 }
