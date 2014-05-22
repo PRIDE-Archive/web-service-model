@@ -10,7 +10,7 @@
 
     <groupId>uk.ac.ebi.pride.archive</groupId>
     <artifactId>web-service-model</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <name>pride-archive-ws-model</name>
