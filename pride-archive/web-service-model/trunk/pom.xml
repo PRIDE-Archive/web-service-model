@@ -10,7 +10,7 @@
 
     <groupId>uk.ac.ebi.pride.archive</groupId>
     <artifactId>web-service-model</artifactId>
-    <version>0.1</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>pride-archive-ws-model</name>
@@ -21,7 +21,7 @@
     -->
 
     <properties>
-        <swagger.version>0.8.3</swagger.version>
+        <!--<swagger.version>0.8.3</swagger.version>-->
         <jackson.version>2.1.5</jackson.version>
     </properties>
 
@@ -46,7 +46,7 @@
     </build>
 
     <dependencies>
-        <!-- REST documentation (Swagger) used of WS model annotation (currently not working, so commented out) -->
+        <!-- REST documentation (Swagger) used of WS model annotation (currently not working, so commented out. waiting for next swagger release version) -->
         <!--<dependency>-->
         	<!--<groupId>com.mangofactory</groupId>-->
         	<!--<artifactId>swagger-springmvc</artifactId>-->
