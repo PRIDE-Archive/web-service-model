@@ -22,7 +22,7 @@
 
     <properties>
         <!--<swagger.version>0.8.3</swagger.version>-->
-        <jackson.version>2.1.5</jackson.version>
+        <jackson.version>2.4.0</jackson.version>
     </properties>
 
     <build>
@@ -70,9 +70,9 @@
     </repositories>
 
     <scm>
-        <connection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride_r/prider-ws-model/branches/refactor</connection>
-        <developerConnection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride_r/prider-ws-model/branches/refactor</developerConnection>
-        <url>https://svn.ebi.ac.uk/pride-repo/pride_r/prider-ws-model/branches/refactor</url>
+        <connection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</connection>
+        <developerConnection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</developerConnection>
+        <url>https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</url>
     </scm>
 
 </project>
