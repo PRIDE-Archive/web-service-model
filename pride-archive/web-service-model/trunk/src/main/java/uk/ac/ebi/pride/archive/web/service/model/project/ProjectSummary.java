@@ -20,6 +20,7 @@ public class ProjectSummary implements Serializable {
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="GMT")
     private Date publicationDate;
     private String submissionType;
+    private String tags;
     private int numAssays;
     private Set<String> species;
     private Set<String> tissues;
@@ -71,6 +72,14 @@ public class ProjectSummary implements Serializable {
 
     public void setSubmissionType(String submissionType) {
         this.submissionType = submissionType;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     public int getNumAssays() {
