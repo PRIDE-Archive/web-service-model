@@ -20,18 +20,19 @@ public class ProjectSummary implements Serializable {
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="GMT")
     private Date publicationDate;
     private String submissionType;
-    private String tags;
     private int numAssays;
     private Set<String> species;
     private Set<String> tissues;
     private Set<String> ptmNames;
     private Set<String> instrumentNames;
+    private Set<String> projectTags;
 
     public ProjectSummary() {
         this.species = new HashSet<String>();
         this.tissues = new HashSet<String>();
         this.ptmNames = new HashSet<String>();
         this.instrumentNames = new HashSet<String>();
+        this.projectTags = new HashSet<String>();
     }
 
     public String getAccession() {
@@ -74,14 +75,6 @@ public class ProjectSummary implements Serializable {
         this.submissionType = submissionType;
     }
 
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
     public int getNumAssays() {
         return numAssays;
     }
@@ -120,5 +113,13 @@ public class ProjectSummary implements Serializable {
 
     public void setInstrumentNames(Set<String> instrumentNames) {
         this.instrumentNames = instrumentNames;
+    }
+
+    public Set<String> getProjectTags() {
+        return projectTags;
+    }
+
+    public void setProjectTags(Set<String> projectTags) {
+        this.projectTags = projectTags;
     }
 }

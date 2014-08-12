@@ -1,10 +1,13 @@
 package uk.ac.ebi.pride.archive.web.service.model.peptide;
 
-import java.util.List;
+import uk.ac.ebi.pride.archive.web.service.model.common.ModifiedLocation;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Florian Reisinger
- * @since $version
+ * @since 0.2.2
  */
 @SuppressWarnings("unused")
 public class PsmDetail {
@@ -20,12 +23,18 @@ public class PsmDetail {
     private String preAA;
     private String postAA;
     private Double retentionTime;
-    private List<String> searchEngine;
-    private List<String> searchEngineScore;
+    private Set<String> searchEngines;
+    private Set<String> searchEngineScores;
     private String spectrumID;
     private String id;
     private String reportedID;
-    private List<String> modifications;
+    private Set<ModifiedLocation> modifications;
+
+    public PsmDetail() {
+        this.searchEngines = new HashSet<String>();
+        this.searchEngineScores = new HashSet<String>();
+        this.modifications = new HashSet<ModifiedLocation>();
+    }
 
     public Double getCalculatedMZ() {
         return calculatedMZ;
@@ -123,20 +132,20 @@ public class PsmDetail {
         this.retentionTime = retentionTime;
     }
 
-    public List<String> getSearchEngine() {
-        return searchEngine;
+    public Set<String> getSearchEngines() {
+        return searchEngines;
     }
 
-    public void setSearchEngine(List<String> searchEngine) {
-        this.searchEngine = searchEngine;
+    public void setSearchEngines(Set<String> searchEngines) {
+        this.searchEngines = searchEngines;
     }
 
-    public List<String> getSearchEngineScore() {
-        return searchEngineScore;
+    public Set<String> getSearchEngineScores() {
+        return searchEngineScores;
     }
 
-    public void setSearchEngineScore(List<String> searchEngineScore) {
-        this.searchEngineScore = searchEngineScore;
+    public void setSearchEngineScores(Set<String> searchEngineScores) {
+        this.searchEngineScores = searchEngineScores;
     }
 
     public String getSpectrumID() {
@@ -163,11 +172,11 @@ public class PsmDetail {
         this.reportedID = reportedID;
     }
 
-    public List<String> getModifications() {
+    public Set<ModifiedLocation> getModifications() {
         return modifications;
     }
 
-    public void setModifications(List<String> modifications) {
+    public void setModifications(Set<ModifiedLocation> modifications) {
         this.modifications = modifications;
     }
 }
