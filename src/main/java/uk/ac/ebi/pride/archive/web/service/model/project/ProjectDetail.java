@@ -16,7 +16,6 @@ import java.util.Set;
 public class ProjectDetail extends ProjectSummary implements Serializable {
 
     private String doi;
-    private Set<String> projectTags;
     private ContactDetail submitter;
     private Set<ContactDetail> lapHeads;
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="GMT")
@@ -39,7 +38,6 @@ public class ProjectDetail extends ProjectSummary implements Serializable {
     private int numIdentifiedSpectra;
 
     public ProjectDetail() {
-        this.projectTags = new HashSet<String>();
         this.lapHeads = new HashSet<ContactDetail>();
         this.experimentTypes = new HashSet<String>();
     }
@@ -50,14 +48,6 @@ public class ProjectDetail extends ProjectSummary implements Serializable {
 
     public void setDoi(String doi) {
         this.doi = doi;
-    }
-
-    public Set<String> getProjectTags() {
-        return projectTags;
-    }
-
-    public void setProjectTags(Set<String> projectTags) {
-        this.projectTags = projectTags;
     }
 
     public ContactDetail getSubmitter() {

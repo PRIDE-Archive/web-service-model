@@ -8,13 +8,14 @@ import java.util.Set;
  * @author Florian Reisinger
  * @since 1.0.8
  */
+@SuppressWarnings("unused")
 public class ProteinDetail implements Serializable {
 
 
     private String accession;
     private Set<String> synonyms;
-    private Set<String> projectAccessions;
-    private Set<String> assayAccessions;
+    private String projectAccession;
+    private String assayAccession;
     private List<String> description;
     private String sequence;
 
@@ -34,20 +35,20 @@ public class ProteinDetail implements Serializable {
         return synonyms;
     }
 
-    public void setProjectAccessions(Set<String> projectAccessions) {
-        this.projectAccessions = projectAccessions;
+    public String getProjectAccession() {
+        return projectAccession;
     }
 
-    public Set<String> getProjectAccessions() {
-        return projectAccessions;
+    public void setProjectAccession(String projectAccession) {
+        this.projectAccession = projectAccession;
     }
 
-    public void setAssayAccessions(Set<String> assayAccessions) {
-        this.assayAccessions = assayAccessions;
+    public String getAssayAccession() {
+        return assayAccession;
     }
 
-    public Set<String> getAssayAccessions() {
-        return assayAccessions;
+    public void setAssayAccession(String assayAccession) {
+        this.assayAccession = assayAccession;
     }
 
     public void setDescription(List<String> description) {
