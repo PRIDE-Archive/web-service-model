@@ -1,6 +1,8 @@
 package uk.ac.ebi.pride.archive.web.service.model.project;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,19 +14,31 @@ import java.util.Set;
  * @since 0.1.6
  */
 @SuppressWarnings("UnusedDeclaration")
+@ApiModel(value = "ProjectSummary", description = "Summary information about a project")
 public class ProjectSummary implements Serializable {
 
+    @ApiModelProperty(value = "the project's accession number")
     private String accession;
+    @ApiModelProperty(value = "the title given to the project")
     private String title;
+    @ApiModelProperty(value = "the description provided for the project")
     private String projectDescription;
+    @ApiModelProperty(value = "the date the project has been made public")
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="GMT")
     private Date publicationDate;
+    @ApiModelProperty(value = "the type of submission (complete or partial)")
     private String submissionType;
+    @ApiModelProperty(value = "the number of assays associated with this project")
     private int numAssays;
+    @ApiModelProperty(value = "the species annotation for the project")
     private Set<String> species;
+    @ApiModelProperty(value = "the tissue annotation for the project")
     private Set<String> tissues;
+    @ApiModelProperty(value = "the Post Translational Modifications (PTM) annotated for the project")
     private Set<String> ptmNames;
+    @ApiModelProperty(value = "the instrument annotation for the project")
     private Set<String> instrumentNames;
+    @ApiModelProperty(value = "specific tags added to the project for classification")
     private Set<String> projectTags;
 
     public ProjectSummary() {
