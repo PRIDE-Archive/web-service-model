@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.archive.web.service.model.file;
 
+import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileSource;
 import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileType;
@@ -11,17 +12,20 @@ import java.net.URL;
  * @author Florian Reisinger
  * @since 0.1.6
  */
-//@ApiModel(value = "Details of a dataset file.", description = "Details for one of the dataset files.")
+@ApiModel(value = "Details of a dataset file.", description = "Details for one of the dataset files.")
 @SuppressWarnings("UnusedDeclaration")
 public class FileDetail implements Serializable {
 
     private String projectAccession;
     private String assayAccession;
+    @ApiModelProperty(dataType = "string")
     private ProjectFileType fileType;
+    @ApiModelProperty(value = "SUBMITTED (part of the original dataset)  or GENERATED (added to the submission by PRIDE)", dataType = "string")
     private ProjectFileSource fileSource;
-    @ApiModelProperty(value = "size in bytes", notes = "in bytes", dataType = "bytes", required = true)
+    @ApiModelProperty(value = "size in bytes")
     private long fileSize;
     private String fileName;
+    @ApiModelProperty(value = "public download link", dataType = "string")
     private URL downloadLink;
 
     public String getProjectAccession() {
@@ -56,7 +60,6 @@ public class FileDetail implements Serializable {
         this.fileSource = fileSource;
     }
 
-    //    @ApiModelProperty(value = "size in bytes", notes = "in bytes", dataType = "bytes", required = true)
     public long getFileSize() {
         return fileSize;
     }
