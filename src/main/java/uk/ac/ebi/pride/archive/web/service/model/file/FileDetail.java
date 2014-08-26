@@ -1,5 +1,9 @@
 package uk.ac.ebi.pride.archive.web.service.model.file;
 
+import com.wordnik.swagger.annotations.ApiModelProperty;
+import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileSource;
+import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileType;
+
 import java.io.Serializable;
 import java.net.URL;
 
@@ -13,8 +17,9 @@ public class FileDetail implements Serializable {
 
     private String projectAccession;
     private String assayAccession;
-    private FileType fileType;
-//    @ApiModelProperty(value = "size in bytes", notes = "in bytes", dataType = "bytes", required = true)
+    private ProjectFileType fileType;
+    private ProjectFileSource fileSource;
+    @ApiModelProperty(value = "size in bytes", notes = "in bytes", dataType = "bytes", required = true)
     private long fileSize;
     private String fileName;
     private URL downloadLink;
@@ -35,12 +40,20 @@ public class FileDetail implements Serializable {
         this.assayAccession = assayAccession;
     }
 
-    public FileType getFileType() {
+    public ProjectFileType getFileType() {
         return fileType;
     }
 
-    public void setFileType(FileType fileType) {
+    public void setFileType(ProjectFileType fileType) {
         this.fileType = fileType;
+    }
+
+    public ProjectFileSource getFileSource() {
+        return fileSource;
+    }
+
+    public void setFileSource(ProjectFileSource fileSource) {
+        this.fileSource = fileSource;
     }
 
     //    @ApiModelProperty(value = "size in bytes", notes = "in bytes", dataType = "bytes", required = true)
