@@ -1,0 +1,86 @@
+package uk.ac.ebi.pride.archive.web.service.model.file;
+
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
+import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileSource;
+import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileType;
+
+import java.io.Serializable;
+import java.net.URL;
+
+/**
+ * @author Florian Reisinger
+ * @since 0.1.6
+ */
+@ApiModel(value = "Details of a dataset file.", description = "Details for one of the dataset files.")
+@SuppressWarnings("UnusedDeclaration")
+public class FileDetail implements Serializable {
+
+    private String projectAccession;
+    private String assayAccession;
+    @ApiModelProperty(dataType = "string")
+    private ProjectFileType fileType;
+    @ApiModelProperty(value = "SUBMITTED (part of the original dataset)  or GENERATED (added to the submission by PRIDE)", dataType = "string")
+    private ProjectFileSource fileSource;
+    @ApiModelProperty(value = "size in bytes")
+    private long fileSize;
+    private String fileName;
+    @ApiModelProperty(value = "public download link", dataType = "string")
+    private URL downloadLink;
+
+    public String getProjectAccession() {
+        return projectAccession;
+    }
+
+    public void setProjectAccession(String projectAccession) {
+        this.projectAccession = projectAccession;
+    }
+
+    public String getAssayAccession() {
+        return assayAccession;
+    }
+
+    public void setAssayAccession(String assayAccession) {
+        this.assayAccession = assayAccession;
+    }
+
+    public ProjectFileType getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(ProjectFileType fileType) {
+        this.fileType = fileType;
+    }
+
+    public ProjectFileSource getFileSource() {
+        return fileSource;
+    }
+
+    public void setFileSource(ProjectFileSource fileSource) {
+        this.fileSource = fileSource;
+    }
+
+    public long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(long fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public URL getDownloadLink() {
+        return downloadLink;
+    }
+
+    public void setDownloadLink(URL downloadLink) {
+        this.downloadLink = downloadLink;
+    }
+}
