@@ -10,7 +10,7 @@
 
     <groupId>uk.ac.ebi.pride.archive</groupId>
     <artifactId>web-service-model</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>pride-archive-ws-model</name>
@@ -83,9 +83,9 @@
     </repositories>
 
     <scm>
-        <connection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.4</connection>
-        <developerConnection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.4</developerConnection>
-        <url>https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.4</url>
+        <connection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</connection>
+        <developerConnection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</developerConnection>
+        <url>https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/trunk</url>
     </scm>
 
 </project>
