@@ -54,6 +54,14 @@ public class FileDetail implements Serializable {
         this.fileType = fileType;
     }
 
+    public ProjectFileSource getFileSource() {
+        return fileSource;
+    }
+
+    public void setFileSource(ProjectFileSource fileSource) {
+        this.fileSource = fileSource;
+    }
+
     public long getFileSize() {
         return fileSize;
     }
