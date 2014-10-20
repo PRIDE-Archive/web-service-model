@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.archive.web.service.model.peptide;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import uk.ac.ebi.pride.archive.web.service.model.common.ModifiedLocation;
 
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.Set;
  * @since 0.2.2
  */
 @SuppressWarnings("unused")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PsmDetail {
     private Double calculatedMZ;
     private String assayAccession;

@@ -1,5 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.assay;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Set;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Set;
  * @since 0.1.6
  */
 @SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AssaySummary {
 
     private String projectAccession;
