@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.project;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
@@ -15,6 +16,7 @@ import java.util.Set;
  */
 @SuppressWarnings("UnusedDeclaration")
 @ApiModel(value = "ProjectSummary", description = "Summary information about a project")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProjectSummary implements Serializable {
 
     @ApiModelProperty(value = "the project's accession number")

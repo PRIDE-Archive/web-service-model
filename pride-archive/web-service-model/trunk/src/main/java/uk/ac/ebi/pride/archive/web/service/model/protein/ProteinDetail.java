@@ -1,5 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.protein;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
@@ -9,6 +11,7 @@ import java.util.Set;
  * @since 1.0.8
  */
 @SuppressWarnings("unused")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProteinDetail implements Serializable {
 
 

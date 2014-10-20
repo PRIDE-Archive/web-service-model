@@ -1,5 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.contact;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @since $version
  */
 @SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ContactDetail implements Serializable {
 
     private String title;

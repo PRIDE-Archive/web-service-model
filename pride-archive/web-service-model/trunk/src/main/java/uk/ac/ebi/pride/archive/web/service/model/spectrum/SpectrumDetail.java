@@ -1,5 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.spectrum;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import java.util.List;
  * @author Jose A. Dianes
  * @since 0.2.6
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SpectrumDetail implements Serializable {
 
     private String spectrumId;

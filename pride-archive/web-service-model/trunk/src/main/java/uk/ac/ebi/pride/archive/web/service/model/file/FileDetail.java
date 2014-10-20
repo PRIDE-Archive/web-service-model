@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.archive.web.service.model.file;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.dataprovider.file.ProjectFileSource;
@@ -14,6 +15,7 @@ import java.net.URL;
  */
 @ApiModel(value = "Details of a dataset file.", description = "Details for one of the dataset files.")
 @SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FileDetail implements Serializable {
 
     private String projectAccession;
@@ -50,14 +52,6 @@ public class FileDetail implements Serializable {
 
     public void setFileType(ProjectFileType fileType) {
         this.fileType = fileType;
-    }
-
-    public ProjectFileSource getFileSource() {
-        return fileSource;
-    }
-
-    public void setFileSource(ProjectFileSource fileSource) {
-        this.fileSource = fileSource;
     }
 
     public long getFileSize() {

@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.project;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.web.service.model.contact.ContactDetail;
@@ -16,6 +17,7 @@ import java.util.Set;
  */
 @SuppressWarnings("UnusedDeclaration")
 @ApiModel(value = "ProjectDetail", description = "Detailed information about a project")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProjectDetail extends ProjectSummary implements Serializable {
 
     @ApiModelProperty(value = "the Digital Object Identifier (DOI) for the project (if available)")

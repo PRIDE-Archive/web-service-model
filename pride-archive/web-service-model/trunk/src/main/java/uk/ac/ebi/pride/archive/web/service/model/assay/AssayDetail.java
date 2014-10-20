@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.archive.web.service.model.assay;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import uk.ac.ebi.pride.archive.web.service.model.contact.ContactDetail;
 
 import java.util.Set;
@@ -9,6 +10,7 @@ import java.util.Set;
  * @since 0.1.6
  */
 @SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AssayDetail extends AssaySummary {
 
     private String experimentalFactor;
