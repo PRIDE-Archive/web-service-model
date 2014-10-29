@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.protein;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,11 +16,17 @@ import java.util.Set;
 public class ProteinDetail implements Serializable {
 
 
+    @ApiModelProperty(value = "the submitted accession of the identified protein")
     private String accession;
+    @ApiModelProperty(value = "accession synonyms; either UniProt accession or EnsEMBL ID")
     private Set<String> synonyms;
+    @ApiModelProperty(value = "the project that identified the protein")
     private String projectAccession;
+    @ApiModelProperty(value = "the assay within the project that identified the protein")
     private String assayAccession;
+    @ApiModelProperty(value = "a description of the protein (usually inferred from protein accession)")
     private List<String> description;
+    @ApiModelProperty(value = "the AA sequence of the identified protein (may be inferred from protein accession)")
     private String sequence;
 
     public void setAccession(String accession) {
