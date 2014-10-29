@@ -18,7 +18,9 @@ import java.net.URL;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FileDetail implements Serializable {
 
+    @ApiModelProperty(dataType = "the project the file belongs to")
     private String projectAccession;
+    @ApiModelProperty(dataType = "the assay the file belongs to")
     private String assayAccession;
     @ApiModelProperty(dataType = "string")
     private ProjectFileType fileType;
@@ -26,8 +28,9 @@ public class FileDetail implements Serializable {
     private ProjectFileSource fileSource;
     @ApiModelProperty(value = "size in bytes")
     private long fileSize;
+    @ApiModelProperty(value = "the name of the file")
     private String fileName;
-    @ApiModelProperty(value = "public download link", dataType = "string")
+    @ApiModelProperty(value = "public FTP download link", dataType = "string")
     private URL downloadLink;
 
     public String getProjectAccession() {
