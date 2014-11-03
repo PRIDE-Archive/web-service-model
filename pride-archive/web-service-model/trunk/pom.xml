@@ -21,7 +21,7 @@
     -->
 
     <properties>
-        <archive.data.provider.api.version>2.0.6-SNAPSHOT</archive.data.provider.api.version>
+        <archive.data.provider.api.version>2.0.6</archive.data.provider.api.version>
         <!--<swagger.version>0.8.6</swagger.version>-->
         <swagger.annotations.version>1.3.5</swagger.annotations.version>
         <jackson.version>2.4.0</jackson.version>
