@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.contact;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
@@ -13,10 +14,15 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContactDetail implements Serializable {
 
+    @ApiModelProperty(value = "the title of the contact person")
     private String title;
+    @ApiModelProperty(value = "the first name of the contact person")
     private String firstName;
+    @ApiModelProperty(value = "the last/family name of the contact person")
     private String lastName;
+    @ApiModelProperty(value = "the contact's email address")
     private String email;
+    @ApiModelProperty(value = "the affiliation of the contact person")
     private String affiliation;
 
 
