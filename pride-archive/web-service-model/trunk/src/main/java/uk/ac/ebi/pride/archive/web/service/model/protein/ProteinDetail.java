@@ -28,6 +28,8 @@ public class ProteinDetail implements Serializable {
     private List<String> description;
     @ApiModelProperty(value = "the AA sequence of the identified protein (may be inferred from protein accession)")
     private String sequence;
+    @ApiModelProperty(value = "SUBMITTED (provided with dataset) or INFERRED (inferred by PRIDE based on protein accession)", dataType = "string")
+    private SequenceType sequenceType;
 
     public void setAccession(String accession) {
         this.accession = accession;
@@ -75,5 +77,19 @@ public class ProteinDetail implements Serializable {
 
     public String getSequence() {
         return sequence;
+    }
+
+    public SequenceType getSequenceType() {
+        return sequenceType;
+    }
+
+    public void setSequenceType(SequenceType sequenceType) {
+        this.sequenceType = sequenceType;
+    }
+
+    public enum SequenceType {
+        INFERRED,
+        SUBMITTED,
+        NOT_AVAILABLE
     }
 }
