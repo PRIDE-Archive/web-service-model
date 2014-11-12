@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.peptide;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.web.service.model.common.ModifiedLocation;
 
 import java.util.HashSet;
@@ -13,23 +14,42 @@ import java.util.Set;
 @SuppressWarnings("unused")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PsmDetail {
+
+    @ApiModelProperty(value = "the theoretical mz value of the peptide")
     private Double calculatedMZ;
+    @ApiModelProperty(value = "the assay in which this peptide was reported")
     private String assayAccession;
+    @ApiModelProperty(value = "the peptide sequence identified")
     private String sequence;
+    @ApiModelProperty(value = "the reported position on the protein where the peptide starts")
     private Integer startPosition;
+    @ApiModelProperty(value = "the reported position on the protein where the peptide ends")
     private Integer endPosition;
+    @ApiModelProperty(value = "the reported accession of the protein containing the peptide")
     private String proteinAccession;
+    @ApiModelProperty(value = "the project in which this peptide was reported")
     private String projectAccession;
+    @ApiModelProperty(value = "the experimental/reported mz value of the peptide")
     private Double experimentalMZ;
+    @ApiModelProperty(value = "the reported charge")
     private Integer charge;
+    @ApiModelProperty(value = "reported amino acid preceding the peptide")
     private String preAA;
+    @ApiModelProperty(value = "reported amino acid following the peptide")
     private String postAA;
+    @ApiModelProperty(value = "the reported retention time")
     private Double retentionTime;
+    @ApiModelProperty(value = "the search engine(s) used to generate the identification")
     private Set<String> searchEngines;
+    @ApiModelProperty(value = "the scores reported by the search engine(s)")
     private Set<String> searchEngineScores;
+    @ApiModelProperty(value = "the ID of the spectrum used for the identification")
     private String spectrumID;
+    @ApiModelProperty(value = "a unique ID assigned by PRIDE to this peptide identification")
     private String id;
+    @ApiModelProperty(value = "the reported ID of this peptide identification (usually, but not necessarily, unique to an assay)")
     private String reportedID;
+    @ApiModelProperty(value = "the modifications reported for this peptide")
     private Set<ModifiedLocation> modifications;
 
     public PsmDetail() {

@@ -1,6 +1,7 @@
 package uk.ac.ebi.pride.archive.web.service.model.assay;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.web.service.model.contact.ContactDetail;
 
 import java.util.Set;
@@ -13,17 +14,29 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AssayDetail extends AssaySummary {
 
+    @ApiModelProperty(value = "experimental factors reported for this assay")
     private String experimentalFactor;
+    @ApiModelProperty(value = "number of proteins in this assay")
     private int proteinCount;
+    @ApiModelProperty(value = "number of peptides in this assay")
     private int peptideCount;
+    @ApiModelProperty(value = "number of unique peptides in this assay")
     private int uniquePeptideCount;
+    @ApiModelProperty(value = "number of identified spectra in this assay")
     private int identifiedSpectrumCount;
+    @ApiModelProperty(value = "total number of spectra in this assay")
     private int totalSpectrumCount;
+    @ApiModelProperty(value = "flag if ms level 2 annotation is available")
     private boolean ms2Annotation;
+    @ApiModelProperty(value = "flag to indicate if a chromatogram is available")
     private boolean chromatogram;
+    @ApiModelProperty(value = "software used for the data/result generation")
     private Set<String> softwares;
+    @ApiModelProperty(value = "disease annotation provided for this assay (if applicable)")
     private Set<String> diseases;
+    @ApiModelProperty(value = "quantification methods used")
     private Set<String> quantMethods;
+    @ApiModelProperty(value = "contact persons, usually the submitter of the dataset")
     private Set<ContactDetail> contacts;
 
     public String getExperimentalFactor() {
