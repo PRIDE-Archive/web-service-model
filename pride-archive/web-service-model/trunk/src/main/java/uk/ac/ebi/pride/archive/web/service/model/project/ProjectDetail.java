@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
+import uk.ac.ebi.pride.archive.web.service.model.common.Reference;
 import uk.ac.ebi.pride.archive.web.service.model.contact.ContactDetail;
 
 import java.io.Serializable;
@@ -56,10 +57,13 @@ public class ProjectDetail extends ProjectSummary implements Serializable {
     private int numUniquePeptides;
     @ApiModelProperty(value = "project statistics: number of identified spectra")
     private int numIdentifiedSpectra;
+    @ApiModelProperty(value = "publications/references associated with the project")
+    private Set<Reference> references;
 
     public ProjectDetail() {
         this.labHeads = new HashSet<ContactDetail>();
         this.experimentTypes = new HashSet<String>();
+        this.references = new HashSet<Reference>();
     }
 
     public String getDoi() {
@@ -188,5 +192,13 @@ public class ProjectDetail extends ProjectSummary implements Serializable {
 
     public void setNumIdentifiedSpectra(int numIdentifiedSpectra) {
         this.numIdentifiedSpectra = numIdentifiedSpectra;
+    }
+
+    public Set<Reference> getReferences() {
+        return references;
+    }
+
+    public void setReferences(Set<Reference> references) {
+        this.references = references;
     }
 }
