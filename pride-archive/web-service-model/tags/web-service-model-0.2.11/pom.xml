@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>uk.ac.ebi.pride.maven</groupId>
+        <artifactId>pride-base-master</artifactId>
+        <version>1.0.3</version>
+    </parent>
+
+    <groupId>uk.ac.ebi.pride.archive</groupId>
+    <artifactId>web-service-model</artifactId>
+    <version>0.2.11</version>
+    <packaging>jar</packaging>
+
+    <name>pride-archive-ws-model</name>
+    <url>http://www.ebi.ac.uk/pride</url>
+
+    <!-- To build the jar file, use:
+            mvn clean package
+    -->
+
+    <properties>
+        <archive.data.provider.api.version>2.0.6</archive.data.provider.api.version>
+        <!--<swagger.version>0.8.6</swagger.version>-->
+        <swagger.annotations.version>1.3.5</swagger.annotations.version>
+        <jackson.version>2.4.0</jackson.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Maven source plugin to generate the source jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <!-- Maven release plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <remoteTagging>true</remoteTagging>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- PRIDE Archive data provider api -->
+        <dependency>
+            <groupId>uk.ac.ebi.pride.archive</groupId>
+            <artifactId>archive-data-provider-api</artifactId>
+            <version>${archive.data.provider.api.version}</version>
+        </dependency>
+        <!-- REST documentation (Swagger) used of WS model annotation (currently not working, so commented out. waiting for next swagger release version) -->
+        <!--<dependency>-->
+        	<!--<groupId>com.mangofactory.swagger</groupId>-->
+        	<!--<artifactId>swagger-models</artifactId>-->
+        	<!--<version>${swagger.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.annotations.version}</version>
+        </dependency>
+        <!-- JSON library (used for Date <-> String conversion) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <!-- EBI repo -->
+        <repository>
+            <id>nexus-ebi-repo</id>
+            <name>The EBI internal repository</name>
+            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo/</url>
+        </repository>
+    </repositories>
+
+    <scm>
+        <connection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.11</connection>
+        <developerConnection>scm:svn:https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.11</developerConnection>
+        <url>https://svn.ebi.ac.uk/pride-repo/pride-archive/web-service-model/tags/web-service-model-0.2.11</url>
+    </scm>
+
+</project>
