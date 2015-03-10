@@ -15,7 +15,7 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Reference {
 
-    @ApiModelProperty(value = "The description of the reference (usually the publication ref line)")
+    @ApiModelProperty(value = "Free text description of the reference (usually the publication ref line)")
     private String desc;
 
     @ApiModelProperty(value = "The (prefixed) IDs identifying the reference (prefixes: PMID, PMCID, DOI)")
