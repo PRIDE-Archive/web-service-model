@@ -3,7 +3,7 @@ package uk.ac.ebi.pride.archive.web.service.model.peptide;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import uk.ac.ebi.pride.archive.web.service.model.common.ModifiedLocation;
-import uk.ac.ebi.pride.archive.web.service.model.common.Pair;
+import uk.ac.ebi.pride.archive.web.service.model.common.SearchEngineScore;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,7 +43,7 @@ public class PsmDetail {
     @ApiModelProperty(value = "the search engine(s) used to generate the identification")
     private Set<String> searchEngines;
     @ApiModelProperty(value = "the scores reported by the search engine(s) represented as key - value pairs")
-    private Set<Pair<String, Double>> searchEngineScores;
+    private Set<SearchEngineScore> searchEngineScores;
     @ApiModelProperty(value = "the ID of the spectrum used for the identification")
     private String spectrumID;
     @ApiModelProperty(value = "a unique ID assigned by PRIDE to this peptide identification")
@@ -55,7 +55,7 @@ public class PsmDetail {
 
     public PsmDetail() {
         this.searchEngines = new HashSet<String>();
-        this.searchEngineScores = new HashSet<Pair<String, Double>>();
+        this.searchEngineScores = new HashSet<SearchEngineScore>();
         this.modifications = new HashSet<ModifiedLocation>();
     }
 
@@ -163,11 +163,11 @@ public class PsmDetail {
         this.searchEngines = searchEngines;
     }
 
-    public Set<Pair<String, Double>> getSearchEngineScores() {
+    public Set<SearchEngineScore> getSearchEngineScores() {
         return searchEngineScores;
     }
 
-    public void setSearchEngineScores(Set<Pair<String, Double>> searchEngineScores) {
+    public void setSearchEngineScores(Set<SearchEngineScore> searchEngineScores) {
         this.searchEngineScores = searchEngineScores;
     }
 
