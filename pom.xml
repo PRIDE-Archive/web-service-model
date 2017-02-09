@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>uk.ac.ebi.pride.archive</groupId>
+    <artifactId>web-service-model</artifactId>
+    <version>0.2.13-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>uk.ac.ebi.pride.maven</groupId>
@@ -8,24 +12,42 @@
         <version>1.0.3</version>
     </parent>
 
-    <groupId>uk.ac.ebi.pride.archive</groupId>
-    <artifactId>web-service-model</artifactId>
-    <version>0.2.13-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>pride-archive-ws-model</name>
-    <url>http://www.ebi.ac.uk/pride</url>
-
-    <!-- To build the jar file, use:
-            mvn clean package
-    -->
+    <developers>
+        <developer>
+            <id>mbernal</id>
+            <name>Manuel Bernal-Llinares</name>
+            <organization>Proteomics Team, EMBL-European Bioinformatics Institute</organization>
+            <organizationUrl>http://www.ebi.ac.uk/pride</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/London</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <uk.ac.ebi.pride.archive-archive-data-provider-api.version>2.0.9</uk.ac.ebi.pride.archive-archive-data-provider-api.version>
-        <!--<swagger.version>0.8.6</swagger.version>-->
-        <swagger.annotations.version>1.3.5</swagger.annotations.version>
-        <jackson.version>2.4.0</jackson.version>
     </properties>
+
+    <dependencies>
+        <!-- PRIDE Archive data provider api -->
+        <dependency>
+            <groupId>uk.ac.ebi.pride.archive</groupId>
+            <artifactId>archive-data-provider-api</artifactId>
+            <version>${uk.ac.ebi.pride.archive-archive-data-provider-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.3-M1</version>
+        </dependency>
+        <!-- JSON library (used for Date <-> String conversion) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -46,32 +68,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <!-- PRIDE Archive data provider api -->
-        <dependency>
-            <groupId>uk.ac.ebi.pride.archive</groupId>
-            <artifactId>archive-data-provider-api</artifactId>
-            <version>${uk.ac.ebi.pride.archive-archive-data-provider-api.version}</version>
-        </dependency>
-        <!-- REST documentation (Swagger) used of WS model annotation (currently not working, so commented out. waiting for next swagger release version) -->
-        <!--<dependency>-->
-        	<!--<groupId>com.mangofactory.swagger</groupId>-->
-        	<!--<artifactId>swagger-models</artifactId>-->
-        	<!--<version>${swagger.version}</version>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>com.wordnik</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>${swagger.annotations.version}</version>
-        </dependency>
-        <!-- JSON library (used for Date <-> String conversion) -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-    </dependencies>
 
     <repositories>
         <!-- EBI repo -->
