@@ -21,7 +21,7 @@
     -->
 
     <properties>
-        <archive.data.provider.api.version>2.0.6</archive.data.provider.api.version>
+        <uk.ac.ebi.pride.archive-archive-data-provider-api.version>2.0.9</uk.ac.ebi.pride.archive-archive-data-provider-api.version>
         <!--<swagger.version>0.8.6</swagger.version>-->
         <swagger.annotations.version>1.3.5</swagger.annotations.version>
         <jackson.version>2.4.0</jackson.version>
@@ -52,7 +52,7 @@
         <dependency>
             <groupId>uk.ac.ebi.pride.archive</groupId>
             <artifactId>archive-data-provider-api</artifactId>
-            <version>${archive.data.provider.api.version}</version>
+            <version>${uk.ac.ebi.pride.archive-archive-data-provider-api.version}</version>
         </dependency>
         <!-- REST documentation (Swagger) used of WS model annotation (currently not working, so commented out. waiting for next swagger release version) -->
         <!--<dependency>-->
