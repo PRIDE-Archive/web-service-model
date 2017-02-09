@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>uk.ac.ebi.pride.maven</groupId>
-        <artifactId>pride-base-master</artifactId>
-        <version>1.0.3</version>
+        <groupId>uk.ac.ebi.pride.architectural</groupId>
+        <artifactId>pride-core</artifactId>
+        <version>1.0.1</version>
     </parent>
 
     <developers>
