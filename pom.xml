@@ -49,15 +49,6 @@
         </dependency>
     </dependencies>
     
-    <repositories>
-        <!-- EBI repo -->
-        <repository>
-            <id>nexus-ebi-repo</id>
-            <name>The EBI internal repository</name>
-            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo/</url>
-        </repository>
-    </repositories>
-
     <scm>
         <connection>scm:git:https://github.com/PRIDE-Archive/web-service-model.git</connection>
         <developerConnection>scm:git:https://github.com/PRIDE-Archive/web-service-model.git</developerConnection>
