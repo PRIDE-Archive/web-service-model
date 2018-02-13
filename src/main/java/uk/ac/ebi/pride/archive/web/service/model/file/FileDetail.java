@@ -96,6 +96,6 @@ public class FileDetail implements Serializable {
     }
 
     public void setAsperaDownloadLink(String asperaDownloadLink) {
-        this.asperaDownloadLink = asperaDownloadLink.toLowerCase();
+        this.asperaDownloadLink = asperaDownloadLink;
     }
 }
