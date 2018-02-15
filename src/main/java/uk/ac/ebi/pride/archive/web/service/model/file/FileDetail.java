@@ -31,7 +31,7 @@ public class FileDetail implements Serializable {
     @ApiModelProperty(value = "the name of the file")
     private String fileName;
     @ApiModelProperty(value = "public FTP download link", dataType = "string")
-    private URL ftpDownloadLink;
+    private URL downloadLink;
     @ApiModelProperty(value = "public Aspera download link", dataType = "string")
     private String asperaDownloadLink;
 
@@ -83,12 +83,12 @@ public class FileDetail implements Serializable {
         this.fileName = fileName;
     }
 
-    public URL getFtpDownloadLink() {
-        return ftpDownloadLink;
+    public URL getDownloadLink() {
+        return downloadLink;
     }
 
-    public void setFtpDownloadLink(URL ftpDownloadLink) {
-        this.ftpDownloadLink = ftpDownloadLink;
+    public void setDownloadLink(URL downloadLink) {
+        this.downloadLink = downloadLink;
     }
 
     public String getAsperaDownloadLink() {
