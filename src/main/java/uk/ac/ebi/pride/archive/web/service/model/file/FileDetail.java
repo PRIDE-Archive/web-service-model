@@ -24,7 +24,7 @@ public class FileDetail implements Serializable {
     private String assayAccession;
     @ApiModelProperty(dataType = "string")
     private ProjectFileType fileType;
-    @ApiModelProperty(value = "SUBMITTED (part of the original dataset)  or GENERATED (added to the submission by PRIDE)", dataType = "string")
+    @ApiModelProperty(value = "SUBMITTED (part of the original dataset) or GENERATED (added to the submission by PRIDE)", dataType = "string")
     private ProjectFileSource fileSource;
     @ApiModelProperty(value = "size in bytes")
     private long fileSize;
